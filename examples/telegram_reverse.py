@@ -13,9 +13,9 @@ from pyrogram import filters, client  # Pyrogram v2.0 and up
 from pyrogram.enums import ParseMode
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from Shikimori import pbot, TOKEN  # Look https://www.github.com/SOME-1HING/ShikimoriBot
+from NekoRobot import pbot, TOKEN  # Look https://www.github.com/SOME-1HING/ShikimoriBot
 
-API_URL = "https://google-reverse-image-api.vercel.app/reverse"
+API_URL = "https://google-reverse-image-apisegs.vercel.app/"
 
 
 async def get_file_id_from_message(message: Message):
@@ -54,7 +54,7 @@ async def get_file_id_from_message(message: Message):
     return file_id
 
 
-@pbot.on_message(filters.command(["pp", "grs", "reverse"]))
+@pgram.on_message(filters.command(["pp", "grs", "reverse"]))
 async def reverse(app: client, msg: Message):
     text = await msg.reply("```Parsing Media...```", parse_mode=ParseMode.MARKDOWN)
     file_id = await get_file_id_from_message(msg)
